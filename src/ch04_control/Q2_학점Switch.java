@@ -2,8 +2,8 @@ package ch04_control;
 
 public class Q2_학점Switch {
 	public static void main(String[] args) {
-
 		int score = 72;
+		
 		String grade = "";
 		switch (score / 10) {
 
@@ -23,3 +23,4 @@ public class Q2_학점Switch {
 
 	}
 }
+

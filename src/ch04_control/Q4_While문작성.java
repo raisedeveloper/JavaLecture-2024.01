@@ -1,8 +1,8 @@
 package ch04_control;
 
 public class Q4_While문작성 {
+	
 	public static void main(String[] args) {
-
 //		for (int i = 10; i > 0; i -= 2) {
 //			System.out.println(i);
 //		}
@@ -14,3 +14,4 @@ public class Q4_While문작성 {
 		
 	}
 }
+
