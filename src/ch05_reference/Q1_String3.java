@@ -7,6 +7,19 @@ public class Q1_String3 {
 	// 100~999 x 100~999 = 906609
 
 	public static void main(String[] args) {
+	
+//	static boolean isPalindrome(String str) {
+//		return str.equals(reverse(str));
+//	}
+//		static String reverse(String str) {
+//			String reverseStr = "";
+//			for (int i = str.length() -1; i >= 0; i--)
+//				reverseStr += str.charAt(i);
+//			return reverseStr;
+//			System.out.println();
+		
+	
+		
 		int palSum = 0;
 		int palsum1 = 0;
 		int palsum2 = 0;
@@ -18,7 +31,6 @@ public class Q1_String3 {
 			}
 		}
 		System.out.println(palSum);
-
 	}
 
 	public static boolean pal(int num) { // text 906609
@@ -31,5 +43,7 @@ public class Q1_String3 {
 		}
 		return true;
 	}
-
 }
+
+
+

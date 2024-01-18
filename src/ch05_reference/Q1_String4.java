@@ -13,6 +13,7 @@ public class Q1_String4 {
 		String text = "C:\\workspace\\frontEndLecture-2024.01\\03.javascript\\ch07.표준내장객체\\04.String연습.js";
 		String array[] = text.split("\\\\");
 		System.out.println(array[array.length - 1]);
+//		System.out.println(array);
 
 	}
 
