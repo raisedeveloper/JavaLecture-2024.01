@@ -25,8 +25,10 @@ public class Interpark {
 	//메소드
 	@Override
 	public String toString() {
-		return "Interpark [rank=" + rank + ", title=" + title + ", author=" + author + ", translator=" + translator
-				+ ", company=" + company + ", price=" + price + "]";
+		return "Interpark [rank=" + rank + ", title=" + title + ", author=" + author 
+				+ ((translator == null) ? "" : " , translator=" + translator)
+				+ ", company=" + company 
+				+ ", price=" + String.format("%,d",price) + "]";
 	}
 	public int getRank() {
 		return rank;
