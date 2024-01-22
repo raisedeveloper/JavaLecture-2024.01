@@ -1,0 +1,31 @@
+package ch12_interface.sec02_interface;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Audio audio = new Audio();
+		audio.turnOn();
+		audio.setVolume(12);
+		audio.turnOff();
+		System.out.println();
+		
+		Television tv = new Television();
+		tv.turnOn();
+		tv.setVolume(5);
+		tv.turnOff();
+		System.out.println();
+		
+		// 다형성 방법으로 타입을 부여할 수 있음
+		RemoteControllable rc = new Audio();
+		rc.turnOn();
+		rc.setVolume(7);
+		rc.turnOff();
+		System.out.println();
+		
+		rc = new Television();
+		rc.turnOn();
+		rc.setVolume(7);
+		rc.turnOff();
+	}
+
+}

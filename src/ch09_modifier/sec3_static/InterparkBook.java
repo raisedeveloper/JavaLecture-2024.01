@@ -1,19 +1,15 @@
-package sec06_interpark;
+package ch09_modifier.sec3_static;
 
-public class Interpark {
+public class InterparkBook {
+	private int rank;
+	private String title;
+	private String author;
+	private String translator;
+	private String company;
+	private int price;
 	
-	//필드, 멤버, 속성
-	public int rank;
-	public String title;
-	public String author;
-	public String translator;
-	public String company;
-	public int price;
-	
-	// 생성자
-	public Interpark() { }
-	public Interpark(int rank, String title, String author, String translator, String company, int price) {
-		super();
+	public InterparkBook() { }
+	public InterparkBook(int rank, String title, String author, String translator, String company, int price) {
 		this.rank = rank;
 		this.title = title;
 		this.author = author;
@@ -22,14 +18,16 @@ public class Interpark {
 		this.price = price;
 	}
 	
-	//메소드
+	// 'translator'가 없으면 출력하지 않고
+	// 금액에 천단위 구분기호 추가
 	@Override
 	public String toString() {
-		return "Interpark [rank=" + rank + ", title=" + title + ", author=" + author 
-				+ ((translator == null) ? "" : " , translator=" + translator)
+		return "InterparkBook [rank=" + rank + ", title=" + title + ", author=" + author 
+				+ ((translator == null) ? "" : ", translator=" + translator)
 				+ ", company=" + company 
-				+ ", price=" + String.format("%,d",price) + "]";
+				+ ", price=" + String.format("%,d", price) + "]";
 	}
+	
 	public int getRank() {
 		return rank;
 	}
@@ -66,5 +64,4 @@ public class Interpark {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-
 }

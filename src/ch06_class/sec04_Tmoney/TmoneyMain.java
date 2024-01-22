@@ -1,4 +1,4 @@
-package ch06_class.sec04_Tmoney;
+package ch06_class.sec04_tmoney;
 
 import java.util.Scanner;
 
