@@ -7,6 +7,8 @@ public class C implements A {
 		System.out.println("C에서 abc()를 실행합니다.");
 		
 	}
+
+
 	
 
 }

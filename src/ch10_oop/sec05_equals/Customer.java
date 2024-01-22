@@ -1,4 +1,4 @@
-package ch10_oop.sec05_Customer;
+package ch10_oop.sec05_equals;
 
 import java.util.Objects;
 
