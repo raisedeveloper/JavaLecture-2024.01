@@ -6,30 +6,34 @@ public class CustomerDaoMySQLImpl implements CustomerDao{
 
 	@Override
 	public Customer getCustomer(int cid) {
-		System.out.println("MySQL: getCustomer()");
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Customer> getCustomerList() {
-		System.out.println("MySQL: getCustomerList()");
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void insertCustomer(Customer customer) {
-			System.out.println("MySQL: insertCustomer()");
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void updateCustomer(Customer customer) {
-		System.out.println("MySQL: updateCustomer()");
+		// TODO Auto-generated method stub
+		
 	}
-
 
 	@Override
 	public void deleteCustomer(int cid) {
-		System.out.println("MySQL: deleteCustomer()");
+		// TODO Auto-generated method stub
+		
 	}
+
+	
 
 }
