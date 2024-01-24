@@ -20,8 +20,6 @@ public class PinkMain {
 		
 				// 사용 후 닫기
 			
-		
-		
 		if(name == 1) {
 			ps.setAcc(accountArray);			// service 단에 작성된 메서드를 사용하기 위해 호출함
 		}

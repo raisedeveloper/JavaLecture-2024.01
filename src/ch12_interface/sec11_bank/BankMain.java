@@ -21,6 +21,7 @@ public class BankMain {
 			System.out.println("선택> ");
 
 			int selectNo = Integer.parseInt(scan.nextLine());
+			
 			switch (selectNo) {
 			case 1:
 				System.out.print("계좌주 이름> ");

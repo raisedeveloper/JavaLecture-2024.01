@@ -16,16 +16,26 @@ public class PinkService {
 
 		System.out.println("초기 입금액> ");
 		int balance = Integer.parseInt(scan.nextLine());
-		
-		Account account = new Account();
-		account.setAccNum(accNum);		// class에 만들어놓은 getter setter 메서드로 값 변경함
+
+		Account account = new Account(accNum, accOwner, balance);
+		account.setAccNum(accNum); // class에 만들어놓은 getter setter 메서드로 값 변경함
 		account.setAccOwner(accOwner);
 		account.setBalance(balance);
-		AccountArray[0] = account;			// 0번째에 넣은것임 _ 이 자리에 For문 진행해야함 (for () 쓴다면)
-		
+		AccountArray[0] = account; // 0번째에 넣은것임 _ 이 자리에 For문 진행해야함 (for () 쓴다면)
+
 		System.out.println(AccountArray[0].getAccOwner());
-		
+
+	}
+
+	public void accList(Account[] AccountArray) {
+		for (int i = 0; i < AccountArray.length; i++) {
+			if (AccountArray[i] != null) {
+				System.out.println("계좌번호" + AccountArray[i].getAccNum() + AccountArray[i].getAccOwner() + AccountArray[i].getBalance());
+			}
+			 break;
+		}
 	}
 
 }
+
 // 1.계좌생성♥  2.계좌목록♥ 까지 해보기 1/23까지
