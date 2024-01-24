@@ -80,6 +80,7 @@ public class MemberMain {
 	static void updateMember(Member member) {
 		int index = list.indexOf(member);
 		if (index >= 0)
+			member.setAge(member.getAge() -1);
 			list.set(index,  member);
 	}
 		

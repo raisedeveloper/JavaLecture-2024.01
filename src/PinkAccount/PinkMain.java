@@ -16,14 +16,16 @@ public class PinkMain {
 		PinkService ps = new PinkService();
 		System.out.println("♥ 목록 선택 ♥ >> ");		// 목록 선택 메세지창 호출
 		
-		int name = Integer.parseInt(scan.nextLine());	// 입력받은 값 강제 숫자 형변환선택할 순번 타이핑 영역 생성
+		int check = Integer.parseInt(scan.nextLine());	// 입력받은 값 강제 숫자 형변환선택할 순번 타이핑 영역 생성
 		
 				// 사용 후 닫기
 			
-		if(name == 1) {
+		if(check == 1) {
 			ps.setAcc(accountArray);			// service 단에 작성된 메서드를 사용하기 위해 호출함
 		}
-		
+		else if (check == 2) {
+			ps.accList(accountArray);			// Pinkservice 에 있는 accList라는 메서드를 호출함
+		}
 		
 		
 	

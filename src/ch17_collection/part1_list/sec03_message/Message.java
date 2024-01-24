@@ -3,68 +3,69 @@ package ch17_collection.part1_list.sec03_message;
 import java.time.LocalDateTime;
 
 public class Message {
-   private int mid;
-   private String content;
-   private String writer;
-   private LocalDateTime modTime;
-   private int isDeleted;
+	private int mid;
+	private String content;
+	private String writer;
+	private LocalDateTime modTime;
+	private int isDeleted;
 
-   public Message() {
-   }
+	public Message() {
+	}
 
-   public Message(int mid, String content, String writer, LocalDateTime modTime, int isDeleted) {
-      super();
-      this.mid = mid;
-      this.content = content;
-      this.writer = writer;
-      this.modTime = modTime;
-      this.isDeleted = isDeleted;
-   }
+	public Message(int mid, String content, String writer, LocalDateTime modTime, int isDeleted) {
+		super();
+		this.mid = mid;
+		this.content = content;
+		this.writer = writer;
+		this.modTime = modTime;
+		this.isDeleted = isDeleted;
 
-   public int getMid() {
-      return mid;
-   }
+	}
 
-   public void setMid(int mid) {
-      this.mid = mid;
-   }
+	@Override
+	public String toString() {
+		return "Message [mid=" + mid + ", content=" + content + ", writer=" + writer + ", modTime=" + modTime
+				+ ", isDeleted=" + isDeleted + "]";
+	}
 
-   public String getContent() {
-      return content;
-   }
+	public int getMid() {
+		return mid;
+	}
 
-   public void setContent(String content) {
-      this.content = content;
-   }
+	public void setMid(int mid) {
+		this.mid = mid;
+	}
 
-   public String getWriter() {
-      return writer;
-   }
+	public String getContent() {
+		return content;
+	}
 
-   public void setWriter(String writer) {
-      this.writer = writer;
-   }
+	public void setContent(String content) {
+		this.content = content;
+	}
 
-   public LocalDateTime getModTime() {
-      return modTime;
-   }
+	public String getWriter() {
+		return writer;
+	}
 
-   public void setModTime(LocalDateTime modTime) {
-      this.modTime = modTime;
-   }
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
 
-   public int getIsDeleted() {
-      return isDeleted;
-   }
+	public LocalDateTime getModTime() {
+		return modTime;
+	}
 
-   public void setIsDeleted(int isDeleted) {
-      this.isDeleted = isDeleted;
-   }
+	public void setModTime(LocalDateTime modTime) {
+		this.modTime = modTime;
+	}
 
-   @Override
-   public String toString() {
-      return "Message [mid=" + mid + ", content=" + content + ", writer=" + writer + ", modTime="
-            + modTime.toString().substring(0, 19).replace("T", " ") + ", isDeleted=" + isDeleted + "]";
-   }
+	public int getIsDeleted() {
+		return isDeleted;
+	}
+
+	public void setIsDeleted(int isDeleted) {
+		this.isDeleted = isDeleted;
+	}
 
 }
