@@ -20,7 +20,7 @@ public class Ex02_ArrayLIst {
 	// furitList.add("mango");  정적인 리스트, 추가/삭제불가능
 	
 	
-	// 프리미티브 타입은 Wrapper 클래스로 리스트를 생성행 함
+	// 프리미티브 타입은 Wrapper 클래스로 리스트를 생성함
 	List<Integer> numList = new ArrayList();
 	numList.add(1); numList.add(3); numList.add(5);
 	System.out.println(numList);

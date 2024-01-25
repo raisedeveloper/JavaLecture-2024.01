@@ -18,14 +18,14 @@ public class PinkService {
 		int balance = Integer.parseInt(scan.nextLine());
 
 		Account account = new Account(accNum, accOwner, balance);
-		account.setAccNum(accNum); // class에 만들어놓은 getter setter 메서드로 값 변경함
+		account.setAccNum(accNum); // 'class'에 만들어놓은 getter setter 메서드로 값 변경함
 		account.setAccOwner(accOwner);
 		account.setBalance(balance);
-		AccountArray[0] = account; // 0번째에 넣은것임 _ 이 자리에 For문 진행해야함 (for () 쓴다면)
+		AccountArray[0] = account; // 0번째에 넣은것임 _ 이 자리에 'For'문 진행해야함 (for () 쓴다면)
 
 		System.out.println(AccountArray[0].getAccOwner());
-		// accList(AccountArray);
-		Deposit(AccountArray);
+//		// accList(AccountArray);
+//		Deposit(AccountArray);
 	}
 
 	public void accList(Account[] AccountArray) { // void 는 리턴타입이 없음 _ 여기서 동작되고 끝남
@@ -53,7 +53,7 @@ public class PinkService {
 					acc = AccountArray[i];
 					break;
 
-					// refactoring 찐임
+					// 'refactoring'밑에 코드는 찐이고 위에는 야메임
 					// int inputBalance = AccountArray[i].getBalance() + accBalance;
 					// AccountArray[i].setBalance(inputBalance);
 				}
@@ -62,11 +62,45 @@ public class PinkService {
 		if (acc == null) {
 			System.out.println("계좌번호가 존재하지 않습니다.");
 		}
+
 	}
-
 	
-	
-	큰지 작은지 확인하는 과정@! 디자인 보고 하기
-}
+//	큰지 작은지
+//	확인하는 과정!
+//	디자인 보고 하기
 
-// 1.계좌생성♥  2.계좌목록♥ 까지 해보기 1/23까지
+	public void withdraw(Account[] AccountArray) {
+		System.out.println("계좌 번호를 입력해주세요.");
+		int accNum = Integer.parseInt(scan.nextLine());
+		
+		Account acc = null;
+		
+	
+		for (int i = 0; i < AccountArray.length; i++) {
+			if (AccountArray[i] != null) {
+				if (AccountArray[i].getAccNum() == accNum) {
+					System.out.println("출금액을 입력하세요.");
+					int accBalance = Integer.parseInt(scan.nextLine());
+					
+					if (AccountArray[i].getBalance() < accBalance) {
+						System.out.println("잔액이 부족합니다.");	
+						acc = new Account();
+						break;
+					}
+					
+					AccountArray[i].setBalance(AccountArray[i].getBalance() - accBalance);
+					System.out.println("출금이 완료되었습니다.");
+					acc = AccountArray[i];
+					break;
+					
+				}
+			}
+		}
+		if (acc == null) {
+			System.out.println("계좌번호가 존재하지 않습니다.");
+				
+			}
+			
+		}
+	}
+// 3. 출금♥ 까지 해보기 1/25까지

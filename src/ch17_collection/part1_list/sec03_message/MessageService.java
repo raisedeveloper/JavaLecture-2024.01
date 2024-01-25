@@ -8,7 +8,7 @@ public interface MessageService {
 	
 	List<Message> getMessageListAll();
 	
-	List<Message> getMessageListByWriter(String writer);
+	List<Message> getMessageListByWriter(String writer);		// 작성자 별 목록
 	
 	void insertMessage(Message message); 
 

@@ -21,6 +21,7 @@ public class Message {
 		this.isDeleted = isDeleted;
 
 	}
+	
 
 	@Override
 	public String toString() {

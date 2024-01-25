@@ -1,11 +1,20 @@
 package ch17_collection.part1_list.sec03_message;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MessageServiceListImpl implements MessageService {
 	private List<Message> messageList = new ArrayList<>(); 			// ♥ Memorizing 외우기 공식!!!!
-	private int index = 0;
+	int index = 101;				// mid 값을 101번으로 시작하겠다
+	
+	public MessageServiceListImpl( ) {
+		messageList.add(new Message(index++, "순현이랑 좋은 하루를 보내야지", "윤주", LocalDateTime.now(), 0));
+		messageList.add(new Message(index++, "순현이랑 예쁜 사랑하렴", "해인", LocalDateTime.now(), 0));
+		messageList.add(new Message(index++, "드디어 그곳에서 탈출하셨군요.", "동호", LocalDateTime.now(), 0));
+		messageList.add(new Message(index++, "너네 진짜 손잡고 타자쳐?", "강성", LocalDateTime.now(), 0));
+		messageList.add(new Message(index++, "너 그거 진짜 깃허브에 올려?", "순현", LocalDateTime.now(), 0));
+	}
 
 	@Override
 	public Message findByMid(int mid) {

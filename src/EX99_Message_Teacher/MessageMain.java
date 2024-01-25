@@ -40,8 +40,8 @@ public class MessageMain {
 				System.out.print("메세지 내용> ");
 				content = scan.nextLine();
 				message = new Message(content, writer);
-				messageService.insertMessage(message);
-				break;
+				messageService.insertMessage(message);	// 인서트 메세지에 파라메터-필드 5개 mid content writer modTime isDeleted
+				break;									// 정수는 메모리에 들어갈 때 기본값 null
 			case 4:
 				System.out.println("---------------");
 				System.out.println("  메세지 수정");
