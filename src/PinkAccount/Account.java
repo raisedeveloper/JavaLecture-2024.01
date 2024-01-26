@@ -1,6 +1,7 @@
 package PinkAccount;
 
-public class Account { // 계좌 정보가 들어갈 Account 클래스
+public class Account { 
+	// 계좌 정보가 들어갈 Account 클래스
 
 	private int accNum;
 	private String accOwner;

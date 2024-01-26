@@ -64,7 +64,7 @@ public class PinkService {
 		}
 
 	}
-	
+
 //	큰지 작은지
 //	확인하는 과정!
 //	디자인 보고 하기
@@ -72,35 +72,33 @@ public class PinkService {
 	public void withdraw(Account[] AccountArray) {
 		System.out.println("계좌 번호를 입력해주세요.");
 		int accNum = Integer.parseInt(scan.nextLine());
-		
+
 		Account acc = null;
-		
-	
+
 		for (int i = 0; i < AccountArray.length; i++) {
 			if (AccountArray[i] != null) {
 				if (AccountArray[i].getAccNum() == accNum) {
 					System.out.println("출금액을 입력하세요.");
 					int accBalance = Integer.parseInt(scan.nextLine());
-					
+
 					if (AccountArray[i].getBalance() < accBalance) {
-						System.out.println("잔액이 부족합니다.");	
+						System.out.println("잔액이 부족합니다.");
 						acc = new Account();
 						break;
 					}
-					
+
 					AccountArray[i].setBalance(AccountArray[i].getBalance() - accBalance);
 					System.out.println("출금이 완료되었습니다.");
 					acc = AccountArray[i];
 					break;
-					
+
 				}
 			}
 		}
 		if (acc == null) {
 			System.out.println("계좌번호가 존재하지 않습니다.");
-				
-			}
-			
+
 		}
+
 	}
-// 3. 출금♥ 까지 해보기 1/25까지
+}
