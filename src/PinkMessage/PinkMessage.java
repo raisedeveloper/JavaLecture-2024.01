@@ -1,52 +1,51 @@
 package PinkMessage;
 
 import java.time.LocalDateTime;
-import java.util.*;
 public class PinkMessage {
 	
 	// 생성자 파트
-	private int MesListNum;
-	private String MesName;
-	private String MesContent;
-	private LocalDateTime MesTime;
-	private int isDeleted;
+	private int mO;					// 'mO': message order
+	private String mWriter;			// message writer
+	private String mContent;		// message content
+	private LocalDateTime mTime;	// message Time
+	private int isDeleted;			// 삭제
 	
-	public PinkMessage() {		// 이거 만드는 이유?
-		
-	}
-
-	//public PinkMessage(int i, String string, LocalDateTime now) { } // 이게 생성되니 impl의 에러가 사라짐 13~18번째 줄
-	public PinkMessage(int i, String string, LocalDateTime now) {
+	public PinkMessage(int mO, String mWriter, String mContent, LocalDateTime mTime, int isDeleted) {
+		this.mO = mO;
+		this.mWriter = mWriter;
+		this.mContent = mContent;
+		this.mTime = mTime;
+		this.isDeleted = isDeleted;
 	}
 	
 	@Override
 	public String toString() {
-		return "PinkMessage [MesListNum=" + MesListNum + ", MesName=" + MesName + ", MesContent=" + MesContent
-				+ ", MesTime=" + MesTime + ", isDeleted=" + isDeleted + "]";
+		return "PinkMessage [mO=" + mO + ", mWriter=" + mWriter + ", mContent=" + mContent + ", mTime=" + mTime
+				+ ", isDeleted=" + isDeleted + "]";
 	}
-	public int getMesListNum() {
-		return MesListNum;
+	public int getmO() {
+		return mO;
 	}
-	public void setMesListNum(int mesListNum) {
-		MesListNum = mesListNum;
+	public void setmO(int mO) {
+		this.mO = mO;
 	}
-	public String getMesName() {
-		return MesName;
+	public String getmWriter() {
+		return mWriter;
 	}
-	public void setMesName(String mesName) {
-		MesName = mesName;
+	public void setmWriter(String mWriter) {
+		this.mWriter = mWriter;
 	}
-	public String getMesContent() {
-		return MesContent;
+	public String getmContent() {
+		return mContent;
 	}
-	public void setMesContent(String mesContent) {
-		MesContent = mesContent;
+	public void setmContent(String mContent) {
+		this.mContent = mContent;
 	}
-	public LocalDateTime getMesTime() {
-		return MesTime;
+	public LocalDateTime getmTime() {
+		return mTime;
 	}
-	public void setMesTime(LocalDateTime mesTime) {
-		MesTime = mesTime;
+	public void setmTime(LocalDateTime mTime) {
+		this.mTime = mTime;
 	}
 	public int getIsDeleted() {
 		return isDeleted;
@@ -54,5 +53,12 @@ public class PinkMessage {
 	public void setIsDeleted(int isDeleted) {
 		this.isDeleted = isDeleted;
 	}
+	
+	
+	
+	
+	
+	
+	
 	
 }

@@ -13,7 +13,6 @@ public class PinkMessasgeServiceImpl {
 		pm.add(new PinkMessage(index++, "나는 자바를 다룰 수 있게 되었다.", LocalDateTime.now()));
 		pm.add(new PinkMessage(index++, "나는 스프링부트를 할 수 있게 되었다.", LocalDateTime.now()));
 		pm.add(new PinkMessage(index++, "나는 깃허브를 다룰 수 있게 되었다.", LocalDateTime.now()));
-		pm.add(new PinkMessage(index++, "나는 이클립스를 다룰 수 있게 되었다.", LocalDateTime.now()));
 		pm.add(new PinkMessage(index++, "나는 3개의 팀 프로젝트를 마쳤다.", LocalDateTime.now()));
 	}
 	
