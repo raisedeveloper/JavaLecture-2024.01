@@ -1,4 +1,4 @@
-package ch17_collection.part1_list.sec03_message;
+package ch18_io.sec11_message;
 
 import java.util.List;
 import java.util.Scanner;

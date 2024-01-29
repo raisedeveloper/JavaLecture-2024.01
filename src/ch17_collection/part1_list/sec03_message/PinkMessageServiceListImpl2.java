@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import ch18_io.sec11_message.Message;
+
 public class PinkMessageServiceListImpl2 implements MessageService {
 	private List<Message> list = new ArrayList<>();
 	private int index = 101;

@@ -3,6 +3,8 @@ package ch17_collection.part1_list.sec03_message;
 import java.util.List;
 import java.util.Scanner;
 
+import ch18_io.sec11_message.Message;
+
 public class PinkMessageMain2 {
 	private static MessageService messageService = new MessageServiceListImpl();
 	private static Scanner scan = new Scanner(System.in);

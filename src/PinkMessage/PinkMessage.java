@@ -18,11 +18,6 @@ public class PinkMessage {
 		this.isDeleted = isDeleted;
 	}
 	
-	@Override
-	public String toString() {
-		return "PinkMessage [mO=" + mO + ", mWriter=" + mWriter + ", mContent=" + mContent + ", mTime=" + mTime
-				+ ", isDeleted=" + isDeleted + "]";
-	}
 	public int getmO() {
 		return mO;
 	}

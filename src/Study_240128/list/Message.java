@@ -40,11 +40,42 @@ public class Message {
 		}
 		public Message() {
 		}
+		// 객체를 문자열로 표현하는 메서드
 		@Override
 		public String toString() {	// 이것은 필요한 오버라이드인가요? 필요없다면 이거 없어도 잘 돌아가서인가요?
 			return "Message [mO=" + mO + ", writer=" + writer + ", content=" + content + ", time=" + time
 					+ ", isDeleted=" + isDeleted + "]";
 		}
-		
-		
+		// 게터 및 세터 메서드
+		public int getmO() {
+			return mO;
+		}
+		public void setmO(int mO) {
+			this.mO = mO;
+		}
+		public String getWriter() {
+			return writer;
+		}
+		public void setWriter(String writer) {
+			this.writer = writer;
+		}
+		public String getContent() {
+			return content;
+		}
+		public void setContent(String content) {
+			this.content = content;
+		}
+		public LocalDateTime getTime() {
+			return time;
+		}
+		public void setTime(LocalDateTime time) {
+			this.time = time;
+		}
+		public int getIsDeleted() {
+			return isDeleted;
+		}
+		public void setIsDeleted(int isDeleted) {
+			this.isDeleted = isDeleted;
+		}
+
 	}

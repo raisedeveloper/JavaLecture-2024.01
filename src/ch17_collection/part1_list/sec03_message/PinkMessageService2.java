@@ -2,6 +2,8 @@ package ch17_collection.part1_list.sec03_message;
 
 import java.util.List;
 
+import ch18_io.sec11_message.Message;
+
 public interface PinkMessageService2 {
 	int DELETED = 1;
 	Message findByMid(int mid);
