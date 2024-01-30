@@ -1,12 +1,13 @@
 package ch14_exception.sec09_class;
 
-public class MyException extends Exeption {
+// Checked Exception
+public class MyException extends Exception {
 
 	public MyException() {
-		
-		
-		public MyException
-		super();
-		
 	}
+
+	public MyException(String message) {
+		super(message);
+	}
+
 }

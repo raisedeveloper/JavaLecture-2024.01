@@ -1,23 +1,36 @@
 package ch18_io;
 
-public class Ex08_BufferedReader {
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.Scanner;
 
+public class Ex08_BufferedReader {
 	public static void main(String[] args) {
-		
-		// 줄 단위로 읽을 수 잇음
-		BufferedReader br = new BufferedReader(new FileReader("c:/Temp/README.txt"));
-		
-		int lineNo = 1;
-		while (true) {
-			String line = br.readLine();
-			if (line == null)
-				break
-			;
-			System.out.println(lineNo+ ", " + line);
-			lineNo++;
-		
-		}
-			br.close();
+		Scanner scan = new Scanner(System.in);
+		System.out.println("찾을 문자열");
+		String search = scan.nextLine();
+		System.out.println("찾을 파일");
+		String filename = scan.nextLine();
+		scan.close();
+
+		grep(search, filename);
 	}
 
+	static void grep(String search, String filename) {
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(filename));
+			int lineNo = 1;
+			while (true) {
+				String line = br.readLine();
+				if (line == null)
+					break;
+				String newLine = line.toLowerCase(); // 대소문자 구분 하지 않겠다
+				if (newLine.contains(search.toLowerCase()))
+					System.out.printf("%4d:\t%s%n", lineNo, line);
+				lineNo++;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
