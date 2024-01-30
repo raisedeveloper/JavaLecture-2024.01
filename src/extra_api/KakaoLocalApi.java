@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.net.http.HttpHeaders;
 import java.util.Map;
 
 /**
@@ -26,6 +27,12 @@ public class KakaoLocalApi {
 	// 헤더 설정 하기
 	HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 	conn.setRequestProperty("Authorization", "KakaoAK "+ kakaoKey);
+	conn.setDoInput(true);
+	
+	URI uri = new URI(apiUrl);
+	// Header setting
+	HttpHeaders headers = new HttpHeaders();
+	
 	
 	return null;
 }
