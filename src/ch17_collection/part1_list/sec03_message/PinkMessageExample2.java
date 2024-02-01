@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import ch18_io.sec11_message.Message;
+import ch18_io.sec11_message.Ex.Message;
 
 public class PinkMessageExample2 {
 

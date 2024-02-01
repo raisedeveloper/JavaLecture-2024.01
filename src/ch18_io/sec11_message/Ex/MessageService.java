@@ -1,17 +1,22 @@
-package EX99_Message.DongHo;
+package ch18_io.sec11_message.Ex;
+
+import java.util.List;
 
 public interface MessageService {
 	int DELETED = 1;
-
+	
 	Message findByMid(int mid);
-
-	void messageList();
-
-	void messageListByWriter(String writer);
-
+	
+	List<Message> getMessageListAll();
+	
+	List<Message> getMessageListByWriter(String writer);
+	
 	void insertMessage(Message message);
-
+	
 	void updateMessage(Message message);
-
+	
 	void deleteMessage(int mid);
+	
+	void close();
+	
 }

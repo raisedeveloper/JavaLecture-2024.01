@@ -2,7 +2,7 @@ package ch17_collection.part1_list.sec03_message;
 
 import java.util.List;
 
-import ch18_io.sec11_message.Message;
+import ch18_io.sec11_message.Ex.Message;
 
 public interface PinkMessageService2 {
 	int DELETED = 1;

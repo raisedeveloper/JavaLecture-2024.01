@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import ch18_io.sec11_message.Message;
+import ch18_io.sec11_message.Ex.Message;
 
 public class MessageServiceListImpl implements MessageService {
 	private List<Message> list = new ArrayList<>();

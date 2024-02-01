@@ -1,12 +1,10 @@
-package ch18_io.sec11_message;
+package ch18_io.sec11_message.Ex;
 
 import java.util.List;
 import java.util.Scanner;
 
-import ch18_io.sec11_message.Message;
-
 public class MessageMain {
-	private static MessageService messageService = new MessageServiceListImpl();
+	private static MessageService messageService = new MessageServiceFileImpl();
 	private static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {
@@ -75,6 +73,7 @@ public class MessageMain {
 				break;
 			case 6:
 				run = false; 
+				messageService.close();
 				break;
 			default:
 				System.out.println("Warning: 1 ~ 6 사이의 숫자만 입력하세요.");

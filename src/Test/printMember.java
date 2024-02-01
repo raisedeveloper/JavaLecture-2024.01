@@ -1,7 +1,6 @@
 package Test;
 
 import java.util.ArrayList;
-
 public class printMember {
 
 	public static void main(String[] args) {
@@ -14,9 +13,7 @@ public class printMember {
 			members.get(i).setTel("000-0000-0000");
 			System.out.println(members.get(i));
 		}
-		
 	}
-
 	public static ArrayList<Member> getMemberList() {
 
 		ArrayList<Member> memberList = new ArrayList<>();
