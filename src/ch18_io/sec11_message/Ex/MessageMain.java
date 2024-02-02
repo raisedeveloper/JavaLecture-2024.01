@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class MessageMain {
-	private static MessageService messageService = new MessageServiceFileImpl();
+	private static MessageServiceFileImpl messageService = new MessageServiceFileImpl();
 	private static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {

@@ -9,6 +9,10 @@ public class MessageServiceFileImpl implements MessageService {
     private int index = 101;
     private String saveFilename;
 
+    // OverRoading 오버로딩
+    public MessageServiceFileImpl() {
+    	
+    }
     public MessageServiceFileImpl(String saveFilename) {
         this.saveFilename = saveFilename;
         File saveFile = new File(saveFilename);
