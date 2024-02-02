@@ -207,3 +207,13 @@ JOIN countrylanguage o ON l.CountryCode=o.CountryCode
 WHERE l.Continent='Asia' AND r.IsOfficial='T'
 ORDER BY l.Population DESC
 LIMIT 10;
+
+/*
+*  1-8. Sub Query
+*/
+# 국내 도시만으로 새로운 테이블을 만드는 경우
+create TABLE if not exists kcity like city; # city를 기반으로 형식만 맞춰서 복사해옴, 값은 아직 없음
+INSERT INTO kcity
+    SELECT * FROM city WHERE countrycode = "KOR"
+    AND id NOT IN (SELECT id FROM kcity); 
+    // 한국에 있는 도시만 데이터를 복사해서 kcity 테이블에 추가, 오류가 뜨지만 테이블은 잘 생성

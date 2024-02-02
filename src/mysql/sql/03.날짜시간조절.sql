@@ -23,16 +23,19 @@ INSERT into dataTable(regDate, modTime)
     values ('2024-01-01', '2024-01-31 10:25:00'), ('2024-02-01', '2024-02-02 10:45:00')
 
 /*
-3. 데이터 조회
-*/
+ * 3. 데이터 조회
+ */
 # 2024-02-02 형식
-Select regDate, DATE_FORMAT(modTime, '%Y-%m-%d') FROM dataTable;
+SELECT regDate, DATE_FORMAT(modTime, '%Y-%m-%d') FROM dateTable;
 
-# AM/PM 형식
-Select DATE_FORMAT(modTime, '%y-%m-%d %H:%i') FROM dataTable; # %P가 시간을 바탕으로 자동으로 AM/PM 지정
+# 10:45:00 AM 형식
+SELECT DATE_FORMAT(modTime, '%h:%i:%s %p') FROM dateTable;
 
--- 날짜 조회 함수
-Select NOW(), CURDATE(), CURTIME();
+# 24-02-02 16:45 형식
+SELECT DATE_FORMAT(modTime, '%y-%m-%d %H:%i') FROM dateTable;
+
+# 날짜 조회 함수
+SELECT NOW(), CURDATE(), CURTIME();
 
 /*
 -- 4. 날짜 수정
@@ -58,5 +61,3 @@ SELECT DAYOFWEEK(regDate) FROM datetable;
 -- 뷰는 단순 조회용이다
 CREATE VIEW largeCity AS SELECT * FROM city
 WHERE population>8000000;
-
-ERMaster
