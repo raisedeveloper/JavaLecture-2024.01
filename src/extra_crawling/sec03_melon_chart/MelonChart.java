@@ -1,25 +1,27 @@
 package extra_crawling.sec03_melon_chart;
 
 public class MelonChart {
-
 	private int rank;
 	private String title;
 	private String artist;
 	private String album;
-	private int like;
-	public MelonChart(int rank, String title, String artist, String album, int like) {
-		super();
+	private String imgSrc;
+	
+	public MelonChart() { }
+	public MelonChart(int rank, String title, String artist, String album, String imgSrc) {
 		this.rank = rank;
 		this.title = title;
 		this.artist = artist;
 		this.album = album;
-		this.like = like;
+		this.imgSrc = imgSrc;
 	}
+	
 	@Override
 	public String toString() {
-		return "MelonChart [rank=" + rank + ", title=" + title + ", artist=" + artist + ", album=" + album + ", like="
-				+ like + "]";
+		return "MelonChart [rank=" + rank + ", title=" + title + ", artist=" + artist + ", album=" + album + ", imgSrc="
+				+ imgSrc + "]";
 	}
+	
 	public int getRank() {
 		return rank;
 	}
@@ -44,11 +46,10 @@ public class MelonChart {
 	public void setAlbum(String album) {
 		this.album = album;
 	}
-	public int getLike() {
-		return like;
+	public String getImgSrc() {
+		return imgSrc;
 	}
-	public void setLike(int like) {
-		this.like = like;
+	public void setImgSrc(String imgSrc) {
+		this.imgSrc = imgSrc;
 	}
-
-	}
+}

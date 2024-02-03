@@ -12,7 +12,8 @@
 CREATE TABLE addrBook (
 	aid int NOT NULL AUTO_INCREMENT,
 	name varchar(16) NOT NULL,
-	tel varchar(16),
+	tel varcha
+    r(16),
 	email varchar(32),
 	birthDay datetime NOT NULL,
 	PRIMARY KEY (aid)
