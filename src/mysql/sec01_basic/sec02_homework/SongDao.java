@@ -99,10 +99,10 @@ public class SongDao {
 				song.setTitle(rs.getString(2));
 				song.setLyrics(rs.getString(3));
 			}
-				rs.close();
-				pstmt.close();
-				conn.close();
-			
+			rs.close();
+			pstmt.close();
+			conn.close();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

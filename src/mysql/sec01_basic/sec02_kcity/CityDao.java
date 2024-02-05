@@ -20,6 +20,7 @@ public class CityDao {
 	private String password;
 
 	public CityDao() {
+
 		String path = "C:/workspace/Java/lesson/src/mysql/mysql.properties";
 		try {
 			Properties prop = new Properties();
@@ -51,7 +52,7 @@ public class CityDao {
 	public City getCityById(int id) {
 		Connection conn = myConnection(); // myConnection 입력하면 우리가 만든 class랑 연결됨
 		String sql = "select * from kcity where id=?";
-    	City city = new City();			// 방법 1
+		City city = new City(); // 방법 1
 		try {
 			// try 구문 안에서 파라메터 값 세팅 해줘야 함
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -131,6 +132,7 @@ public class CityDao {
 
 		return list;
 	}
+
 	public List<City> getCityListByDistrict(String district) {
 		Connection conn = myConnection();
 		String sql = "select * from kcity where district=?";
@@ -142,19 +144,20 @@ public class CityDao {
 			// Select 실행하고 결과를 ResutSet으로 받기
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
-			City city = new City(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5));
-			list.add(city);
+				City city = new City(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5));
+				list.add(city);
 			}
 			rs.close();
 			pstmt.close();
-			conn.close();			
+			conn.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return list;			// 여기까지는  Select Processing 만 한것임
-								
-								// 이하 부터는 insert update delete 할 것임
-		}
+		return list; // 여기까지는 Select Processing 만 한것임
+
+		// 이하 부터는 insert update delete 할 것임
+	}
+
 //		public void updateCity(City city) {		// 2번째 수정 : insertCity 에서 updateCity 로 변경 / 3번쨰 수정 : deleteCity
 //			Connection conn = myConnection();
 //			String sql = "update kcity set name=?, countrycode=?, district=?, population=? where id=?";		// 2번째 수정 : update 시 추가됨
@@ -176,20 +179,19 @@ public class CityDao {
 //				e.printStackTrace();
 //			}
 //			
-			public void deleteCity(int id) {		// 2번째 수정 : insertCity 에서 updateCity 로 변경 / 3번쨰 수정 : deleteCity
-				Connection conn = myConnection();
-				String sql = "delete from kcity where id=?";		// 3번째 수정 : delete 시 추가됨
-				try {
-					// 파라메터 세팅하기
-					PreparedStatement pstmt = conn.prepareStatement(sql);		// parameter setting processing
-					pstmt.setInt(1, id);
-					
-					// SQL 실행
-					pstmt.executeUpdate(); // executeUpdate만 쓰면 됨 
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				
-			
+	public void deleteCity(int id) { // 2번째 수정 : insertCity 에서 updateCity 로 변경 / 3번쨰 수정 : deleteCity
+		Connection conn = myConnection();
+		String sql = "delete from kcity where id=?"; // 3번째 수정 : delete 시 추가됨
+		try {
+			// 파라메터 세팅하기
+			PreparedStatement pstmt = conn.prepareStatement(sql); // parameter setting processing
+			pstmt.setInt(1, id);
+
+			// SQL 실행
+			pstmt.executeUpdate(); // executeUpdate만 쓰면 됨
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+
 	}
+}
