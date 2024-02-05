@@ -1,4 +1,4 @@
-package mysql.sec01_basic.sec02_homework;
+package mysql.sec01_basic.sec02_homework; 
 
 import java.io.FileInputStream;
 import java.sql.Connection;
