@@ -17,4 +17,6 @@ public interface MessageService {
 	void updateMessage(Message message); 
 
 	void deleteMessage(int mid); 
+	
+	void close();
 }
