@@ -10,6 +10,8 @@ public class PinkMessage {
 	private LocalDateTime mTime;	// message Time
 	private int isDeleted;			// 삭제
 	
+	
+	public PinkMessage() { }
 	public PinkMessage(int mO, String mWriter, String mContent, LocalDateTime mTime, int isDeleted) {
 		this.mO = mO;
 		this.mWriter = mWriter;
