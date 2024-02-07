@@ -14,7 +14,7 @@ public class UserServiceMySQLImpl implements UserService{
 	}
 
 	@Override
-	public List<User> getUserList(int page) {
+	public List<User> getUserList(int page) {		// business logic 이 들어간 곳
 		int offset = (page - 1) * count_per_page;
 		List<User> list = userDao.getUserList(count_per_page, offset);
 		return list;
@@ -36,14 +36,16 @@ public class UserServiceMySQLImpl implements UserService{
 
 	@Override
 	public void updateUser(User user) {
+		userDao.updateUser(user);
 	}
 
 	@Override
 	public void deleteUser(String uid) {
+		userDao.deleteUser(uid);
 	}
 
 	@Override
-	public int login(String uid, String pwd) {
+	public int login(String uid, String pwd) {		// business logic 이 들어간 곳
 		User user = userDao.getUserByUid(uid);
 		if (user==null)
 			return USER_NOT_EXIST;
@@ -54,6 +56,7 @@ public class UserServiceMySQLImpl implements UserService{
 
 	@Override
 	public void close() {
+		userDao.close();
 	}
 	
 	
