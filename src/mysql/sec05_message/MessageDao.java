@@ -65,7 +65,8 @@ public MessageDao() {
 			
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next());
-			Message m = new Message(rs.getInt(1), rs.getString(2), rs.getString(3), LocalDateTime.parse(rs.getString(4).replace(" ", "T"), 0);
+			Message m = new Message(rs.getInt(1), rs.getString(2), 
+					rs.getString(3), LocalDateTime.parse(rs.getString(4).replace(" ", "T"), 0);
 			list.add(m);
 			
 			rs.close(); 

@@ -6,7 +6,7 @@ import java.util.Scanner;
 import ch18_io.sec11_message.Ex.Message;
 
 public class MessageMain { // 메모리(자체적)-> 파일(에 저장해서) -> DB(SQL에서 만든 table) 에서 돌아가는 형태 배움
-	private static MessageService messageService = new MessageServiceMySQLImpl();
+	private static MessageService messageService = new MessageServiceMySQLImpl();		// DAO할 떄 MessageServiceMySQLImpl(); 추가됨
 	private static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {
@@ -81,6 +81,7 @@ public class MessageMain { // 메모리(자체적)-> 파일(에 저장해서) ->
 			}
 		}
 		System.out.println("프로그램 종료");
+		messageService.close();//DAO 할 때 추가
 		scan.close();
 	}
 
