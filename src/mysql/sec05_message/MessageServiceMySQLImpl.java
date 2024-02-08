@@ -9,6 +9,7 @@ import ch18_io.sec11_message.Ex.Message;
 public class MessageServiceMySQLImpl implements MessageService {
 	private List<Message> list = new ArrayList<>();
 	private int index = 101;
+	private MessageDao msgDao = new MessageDao();
 
 	public MessageServiceMySQLImpl() {
 		list.add(new Message(index++, "자바 세계에 오신걸 환영합니다.", "제임스", LocalDateTime.now(), index));
@@ -69,6 +70,11 @@ public class MessageServiceMySQLImpl implements MessageService {
 	@Override
 	public void close() {
 		msgDao.close();
+	}
+
+	@Override
+	public void deleteMessage(int mid) {
+		
 	}
 
 }

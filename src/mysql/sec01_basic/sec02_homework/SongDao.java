@@ -20,7 +20,7 @@ import mysql.sec01_basic.sec02_kcity.City;
 public class SongDao {
 	private String connStr;
 	private String user;
-	private String password;
+	private String password; 
 
 	public SongDao() {
 // 		만들어야 할 것
@@ -29,8 +29,10 @@ public class SongDao {
 //		3. insert
 //		4. update 
 //		5. delete
+		
+		
 
-		String path = "C:/workspace/Java/lesson/src/mysql/mysql.properties";
+		String path = "C:/workspace/Java/lesson/src/mysql/ERD/mysql.properties";
 		try {
 			Properties prop = new Properties();
 			prop.load(new FileInputStream(path));
@@ -59,7 +61,7 @@ public class SongDao {
 		return conn;
 	}
 
-	public Song getSongById(int sid) {
+	public Song getSongBySid(int sid) {
 		Connection conn = myConnection(); // myConnection 입력하면 우리가 만든 class랑 연결됨
 		String sql = "select * from song where sid=?";
 		Song song = new Song(); // 방법 1

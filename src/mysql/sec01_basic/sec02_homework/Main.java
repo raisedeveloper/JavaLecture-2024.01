@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		SongDao songDao = new SongDao(); // SongDao 는 동작(서비스)단임 / 밑에 Song이 VO임
-		Song song = songDao.getSongById(101);
+		Song song = songDao.getSongBySid(101);
 		System.out.println(song);
 		song = null;
 		song = songDao.getSongByTitle("Tell Me");

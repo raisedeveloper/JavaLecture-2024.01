@@ -12,8 +12,12 @@ public class Message {
 	public Message() {
 	}
 	
-	public Message(String content, String writer) {
-		
+	public Message(int mid, String content, String writer, LocalDateTime modTime) {
+		super();
+		this.mid = mid;
+		this.content = content;
+		this.writer = writer;
+		this.modTime = modTime;
 	}
 
 	public Message(int mid, String content, String writer, LocalDateTime modTime, int isDeleted) {
@@ -25,7 +29,6 @@ public class Message {
 		this.isDeleted = isDeleted;
 
 	}
-	
 
 	@Override
 	public String toString() {

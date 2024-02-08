@@ -158,7 +158,7 @@ public class SongDao_Teacher {
 		try {
 			// 파라메터 세팅
 			PreparedStatement pstmt= conn.prepareStatement(sql);
-			pstmt.setString(1, sid);
+			pstmt.setInt(1, song.getSid());
 		
 			// SQL 실행
 			pstmt.executeUpdate();

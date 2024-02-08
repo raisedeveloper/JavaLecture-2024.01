@@ -10,7 +10,7 @@ public class MessageTest {
 		Message msg = msgDao.getMessageByMid(101);
 		System.out.println(msg);
 		
-//		msg = new Message("집에 빨리 가고 싶어요.", "브라이언");
+//		msg = new Message(".", "브라이언");
 //		msgDao.insertMessage(msg);
 		
 		msg = msgDao.getMessageByMid(107);
