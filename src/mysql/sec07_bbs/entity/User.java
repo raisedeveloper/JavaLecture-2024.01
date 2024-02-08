@@ -1,4 +1,4 @@
-package mysql.SQL.sec07_bbs.entity;
+package mysql.sec07_bbs.entity;
 
 import java.time.LocalDate;
 

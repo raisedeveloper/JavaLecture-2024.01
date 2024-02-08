@@ -1,4 +1,4 @@
-package mysql.SQL.sec07_bbs.dao;
+package mysql.sec07_bbs.dao;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import mysql.SQL.sec07_bbs.entity.User;
+import mysql.sec07_bbs.entity.User;
 
 public class UserDao {
 	private String connStr;
@@ -88,7 +88,7 @@ public class UserDao {
 	}
 	
 	public void insertUser(User user) {
-		String sql = "insert users values (?, ?, ?, ?, default, default)";
+		String sql = "insert users values (?, ?, ?, ?, default, default)";		// INTO 가 없어도 돌아감!
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, user.getUid());

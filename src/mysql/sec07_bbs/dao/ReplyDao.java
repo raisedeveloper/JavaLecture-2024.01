@@ -1,4 +1,4 @@
-package mysql.SQL.sec07_bbs.dao;
+package mysql.sec07_bbs.dao;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -11,8 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import mysql.SQL.sec07_bbs.entity.Reply;
-import mysql.SQL.sec07_bbs.entity.User;
+import mysql.sec07_bbs.entity.Reply;
+import mysql.sec07_bbs.entity.User;
 
 public class ReplyDao {
 	private String connStr;
@@ -37,35 +37,22 @@ public class ReplyDao {
 			e.printStackTrace();
 		}
 	}
+	 public void close() {
+	        try {
+	            if (conn != null) {
+	            	conn.close();
+	            }
+	        } catch (Exception e) {
+	         e.printStackTrace();
+	        }
+	    }
 
-	public void close() {
-		try {
-			conn.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public Reply getReply(int rid) {
-		String sql = "select * from reply where rid=?";
-		Reply reply = null;
-
-		try {
-			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, rid);
-			ResultSet rs = pstmt.executeQuery();
-			while (rs.next()) {
-				reply = new Reply(rs.getInt(1), rs.getString(2), LocalDateTime.parse(rs.getString(3).replace(" ", "T")),
-						rs.getString(4), rs.getInt(5));
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return reply;
-	}
 
 	public List<Reply> getReplyList(int bid) {
-		String sql = "select * from users where bid=?";
+		String sql = "SELECT r.*, u.uname FROM reply r"
+				+ "	JOIN users u ON r.uid=u.uid"
+				+ "	WHERE r.bid=?"
+				+ "	ORDER BY rid;";
 		List<Reply> list = new ArrayList<>();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -73,9 +60,10 @@ public class ReplyDao {
 
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
-				Reply reply = new Reply(rs.getInt(1), rs.getString(2),
-						LocalDateTime.parse(rs.getString(3).replace(" ", "T")), rs.getString(4), rs.getInt(5));
-				list.add(reply);
+				Reply r = new Reply(rs.getInt(1), rs.getString(2),
+						LocalDateTime.parse(rs.getString(3).replace(" ", "T")), 
+						rs.getString(4), rs.getInt(5), rs.getString(6));
+				list.add(r);
 			}
 			rs.close();
 			pstmt.close();
@@ -86,7 +74,7 @@ public class ReplyDao {
 	}
 
 	public void insertReply(Reply reply) {
-		String sql = "insert reply values(default, ?, default, ?, ?)";
+		String sql = "insert into reply values(default, ?, default, ?, ?)";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, reply.getComment());
