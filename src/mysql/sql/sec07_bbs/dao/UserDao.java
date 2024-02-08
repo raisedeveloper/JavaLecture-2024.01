@@ -21,7 +21,7 @@ public class UserDao {
 
 	public UserDao() {
 
-	String path = "C:/workspace/Java/lesson/src/mysql/mysql.properties";
+	String path = "C:/workspace/Java/lesson/src/mysql/sec07_bbs/mysql.properties";
 	try {
 		Properties prop = new Properties();
 		prop.load(new FileInputStream(path));
@@ -74,7 +74,13 @@ public class UserDao {
 			pstmt.setInt(1, num);
 			pstmt.setInt(2, offset);
 			
-			ResultSet rs = pstmt.executeQuery();		// Teacher 깃허브 살펴보기
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				User user = new User(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
+									LocalDate.parse(rs.getString(5)), rs.getInt(6));
+				list.add(user);
+			}
+			rs.close(); pstmt.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

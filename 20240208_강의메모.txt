@@ -1,0 +1,19 @@
+새션이라는 메모리를 유지-누군가 사용하면
+자바스페이스 자바에서 액세스할 수 있는 것 같이 등록되어 있는 것은  session이 가능함
+현재 session의 사용자는 누구? (사용자의 이름은 무엇인가?)
+기술적으로 보면 로그인이 별게 아님
+session을 보고 로그인을 했다 안했다를 판별함
+session을 파괴하는 것이 로그아웃임
+http 라는 것 : ex 전화걸 때 다이얼링 - 상대가 받으면 -통화 - 통화 종료
+메세지 카톡 : 아무 때나 보냄 - 상대가 언제 받을 지 모름 - 확인하면 답장옴
+전화거는 것 - connection oriented 연결 위주 - 연결에 기반한 통신 방식
+카톡 메세지 - connection list 연결이 없는 http가 connetion oriented 가 아니라 connection list 방식임
+로그인 했다 안했다는 session으로 판단함 - 특별한 session의 유무로 가림
+목록이 나오면 (erm에서) 게시글 목록이 나올 시 목록에 표시되어야 할 항목 : 
+아이디(있으나 없으나 상관 없음) , 타이틀[댓글수], 컨텐트X, 이름X 대신 uname(nickname), 조회수
+id - title - uname - LocalDate/Time(지금 막 작성한 것) - 조회수
+bid - title[replyCount] - uname - modTime - viewCount
++-------+ +----------+
+|검색창▼| | 검색단어 |
++-------+ +----------+
+설연휴 끝나고 웹서버를 배우고 난 후 미니프로젝트 4일간의 분량 - 게시판 만들기 or 일정표 만들기

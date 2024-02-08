@@ -1,6 +1,10 @@
-package mysql.sec06_user;
+package mysql.SQL.sec07_bbs.appl;
 
 import java.util.List;
+
+import mysql.sec06_user.User;
+import mysql.sec06_user.UserService;
+import mysql.sec06_user.UserServiceMySQLImpl;
 
 public class UserTest {
 
@@ -9,6 +13,7 @@ public class UserTest {
 		
 		User user = null;
 		// 사용자 만들어주기
+		
 		user = new User("james", "1234", "제임스", "james@gmail.com");
 		userSvc.registerUser(user);
 		user = new User("maria", "1234", "마리아", "maria@naver.com");

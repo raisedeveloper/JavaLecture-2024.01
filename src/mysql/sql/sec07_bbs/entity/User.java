@@ -48,7 +48,8 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [uid=" + uid + ", uname=" + uname + ", email=" + email + ", regDate=" + regDate
-				+ ", isDeleted=" + isDeleted + "]";//getPwd하면 원할 때 찍을 수 있으니 toString에서는 제거했음(나중에 필요하면 쓰기, pwd 쓰면 너무 길어져서)
+				+ ", isDeleted=" + isDeleted + "]";
+		//getPwd하면 원할 때 찍을 수 있으니 toString에서는 제거했음(나중에 필요하면 쓰기, pwd 쓰면 너무 길어져서)
 	}
 	
 	public String getUid() {

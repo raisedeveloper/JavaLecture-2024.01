@@ -96,11 +96,10 @@ public class UserDao {
 	}
 	
 	public void updateUser(User user) {
-		String sql = "update users set pwd=?, uname=?, email=?, where uid=?";
+		String sql = "update users set pwd=?, uname=?, email=? where uid=?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 //			pstmt.setString(1, user);
-
 			
 			pstmt.executeUpdate();
 			pstmt.close();

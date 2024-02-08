@@ -35,7 +35,7 @@ public MessageDao() {
 }
 
 	public Message getMessageByMid(int mid) {
-		String sql = "select * from message where mid=?"
+		String sql = "select * from message where mid=?";
 		Message msg = new Message();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -55,6 +55,7 @@ public MessageDao() {
 		} catch (Exception e) {
 			e.printStackTrace();		
 			}
+		return msg;
 	}
 	public List<Message> getMessageListByMid(String writer) {
 		String sql = "select * from message where writer like ? and isDeleted=0";
@@ -66,7 +67,7 @@ public MessageDao() {
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next());
 			Message m = new Message(rs.getInt(1), rs.getString(2), 
-					rs.getString(3), LocalDateTime.parse(rs.getString(4).replace(" ", "T"), 0);
+					rs.getString(3), LocalDateTime.parse(rs.getString(4).replace(" ", "T")));
 			list.add(m);
 			
 			rs.close(); 
