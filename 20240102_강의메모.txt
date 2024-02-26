@@ -1,0 +1,24 @@
+*현재 작업하는 디렉토리를 알려줌 => 프롬프트
+
+prompt>dir directory,  현 폴더에 어떤 파일이 있는지 알려줌
+
+prompt>mkdir directory-name 디렉토리 생성(make directory)
+
+prompt>명령어 옵션 파일명 [과거에는 도스로 불림DOS( Disco operating(ding?) system)]
+ prompt>rmdir remove dir (remove directory)
+
+상대경로     .            현재 디렉토리
+                .. 상위 디렉토리
+	   디렉토리명 	\로 시작하지 않는 디렉토리명 
+c: d:  제외하고
+
+절대경로\workspace\WebProject (\ = root 뿌리 => 최상위 디렉토리(길))
+
+\workspace\WebProject\
+\Temp\test
+
+파일명을 누르고 Tab을 누르면 자동완성됨
+
+prompt>cd 절대경로 또는 상대경로 둘다 사용가능
+
+cd는 리눅스에서도 cd다 통일되서 좋다! (리눅스랑 윈도우랑 언어가 같으면 편함 ㅎㅎ)

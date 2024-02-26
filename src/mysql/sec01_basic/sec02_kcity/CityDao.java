@@ -69,8 +69,8 @@ public class CityDao {
 				city.setCountryCode(rs.getString(3)); // 방법1
 				city.setDistrict(rs.getString(4)); // 방법1
 				city.setPopulation(rs.getInt(5)); // 방법1
-//				city = new City(rs.getInt(1), rs.getString(2), rs.getString(3), // 방법2 생성자를 이용해서 지정
-//						rs.getString(4), rs.getInt(5));
+				// city = new City(rs.getInt(1), rs.getString(2), rs.getString(3), // 방법2 생성자를 이용해서 지정
+				// 		rs.getString(4), rs.getInt(5));
 			}
 			rs.close();
 			pstmt.close();
@@ -127,9 +127,7 @@ public class CityDao {
 			conn.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-
 		}
-
 		return list;
 	}
 

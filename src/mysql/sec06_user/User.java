@@ -13,6 +13,7 @@ import java.time.LocalDate;
 	   PRIMARY KEY (uid)
 	);
  */
+
 public class User {
 	private String uid;
 	private String pwd;
